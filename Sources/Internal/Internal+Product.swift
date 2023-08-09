@@ -10,7 +10,7 @@ import Foundation
 import StoreKit
 
 extension Internal {
-    struct IAProduct {
+    public struct IAProduct {
         private let skProduct: SKProduct
 
         init(_ skProduct: SKProduct) {
