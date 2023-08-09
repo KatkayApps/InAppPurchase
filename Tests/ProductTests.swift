@@ -30,7 +30,7 @@ class ProductTests: XCTestCase {
             downloadContentVersion: "DOWNLOAD_CONTENT_VERSION",
             subscriptionPeriod: period
         )
-        let product = Internal.Product(skProduct)
+        let product = Internal.IAProduct(skProduct)
 
         XCTAssertEqual(product.productIdentifier, "PRODUCT_001")
         XCTAssertEqual(product.price, 100)
@@ -64,7 +64,7 @@ class ProductTests: XCTestCase {
             downloadContentVersion: "DOWNLOAD_CONTENT_VERSION",
             subscriptionPeriod: nil
         )
-        let product = Internal.Product(skProduct)
+        let product = Internal.IAProduct(skProduct)
 
         XCTAssertEqual(product.productIdentifier, "PRODUCT_001")
         XCTAssertEqual(product.price, 100)
@@ -94,7 +94,7 @@ class ProductSubscriptionPeriodTests: XCTestCase {
             downloadContentVersion: "DOWNLOAD_CONTENT_VERSION",
             subscriptionPeriod: StubSubscriptionPeriod(numberOfUnits: 1, unit: .day)
         )
-        let product = Internal.Product(skProduct)
+        let product = Internal.IAProduct(skProduct)
         XCTAssertEqual(product.subscriptionPeriod?.numberOfUnits, 1)
         XCTAssertEqual(product.subscriptionPeriod?.unit, .day)
     }
@@ -125,6 +125,6 @@ class PeriodUnitTests: XCTestCase {
             downloadContentVersion: "DOWNLOAD_CONTENT_VERSION",
             subscriptionPeriod: StubSubscriptionPeriod(numberOfUnits: 1, unit: periodUnit)
         )
-        return Internal.Product(skProduct).subscriptionPeriod?.unit
+        return Internal.IAProduct(skProduct).subscriptionPeriod?.unit
     }
 }

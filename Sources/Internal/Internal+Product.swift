@@ -10,7 +10,7 @@ import Foundation
 import StoreKit
 
 extension Internal {
-    struct Product {
+    struct IAProduct {
         private let skProduct: SKProduct
 
         init(_ skProduct: SKProduct) {
@@ -18,7 +18,7 @@ extension Internal {
         }
     }
 }
-extension Internal.Product: Product {
+extension Internal.IAProduct: Product {
     var productIdentifier: String {
         return skProduct.productIdentifier
     }

@@ -104,7 +104,7 @@ extension InAppPurchase: InAppPurchaseProvidable {
 
     public func set(shouldAddStorePaymentHandler: ((_ product: Product) -> Bool)? = nil, handler: InAppPurchase.PurchaseHandler?) {
         paymentProvider.set(shouldAddStorePaymentHandler: { [weak self] (_, payment, product) -> Bool in
-            let shouldAddStorePayment = shouldAddStorePaymentHandler?(Internal.Product(product)) ?? false
+            let shouldAddStorePayment = shouldAddStorePaymentHandler?(Internal.IAProduct(product)) ?? false
             if shouldAddStorePayment {
                 self?.paymentProvider.addPaymentHandler(withProductIdentifier: payment.productIdentifier, handler: { (_, result) in
                     switch result {
@@ -135,7 +135,7 @@ extension InAppPurchase: InAppPurchaseProvidable {
         productProvider.fetch(productIdentifiers: productIdentifiers, requestId: UUID().uuidString) { (result) in
             switch result {
             case .success(let products):
-                handler?(.success(products.map({ Internal.Product($0) })))
+                handler?(.success(products.map({ Internal.IAProduct($0) })))
             case .failure(let error):
                 handler?(.failure(error))
             }
