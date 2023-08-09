@@ -18,32 +18,32 @@ extension Internal {
         }
     }
 }
-extension Internal.IAProduct: Product {
-    var productIdentifier: String {
+extension Internal.IAProduct: ProductProtocol {
+    public var productIdentifier: String {
         return skProduct.productIdentifier
     }
-    var price: Decimal {
+    public var price: Decimal {
         return skProduct.price as Decimal
     }
-    var localizedTitle: String {
+  public var localizedTitle: String {
         return skProduct.localizedTitle
     }
-    var localizedDescription: String {
+  public var localizedDescription: String {
         return skProduct.localizedDescription
     }
-    var priceLocale: Locale {
+  public var priceLocale: Locale {
         return skProduct.priceLocale
     }
-    var isDownloadable: Bool {
+  public var isDownloadable: Bool {
         return skProduct.isDownloadable
     }
-    var downloadContentLengths: [NSNumber] {
+  public var downloadContentLengths: [NSNumber] {
         return skProduct.downloadContentLengths
     }
-    var downloadContentVersion: String {
+  public var downloadContentVersion: String {
         return skProduct.downloadContentVersion
     }
-    var subscriptionPeriod: ProductSubscriptionPeriod? {
+  public var subscriptionPeriod: ProductSubscriptionPeriod? {
         guard #available(iOS 11.2, *), let subscriptionPeriod = skProduct.subscriptionPeriod else {
             return nil
         }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol Product {
+public protocol ProductProtocol {
     var productIdentifier: String { get }
     var price: Decimal { get }
     var localizedTitle: String { get }

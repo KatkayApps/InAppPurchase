@@ -6,4 +6,5 @@
 //  Copyright © 2018年 Jin Sasaki. All rights reserved.
 //
 
-internal enum Internal {}
+//internal enum Internal {}
+public enum Internal {}
