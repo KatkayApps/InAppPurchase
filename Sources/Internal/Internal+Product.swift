@@ -9,11 +9,11 @@
 import Foundation
 import StoreKit
 
-public extension Internal {
-    struct IAProduct {
-        private let skProduct: SKProduct
+extension Internal {
+    public struct IAProduct {
+        let skProduct: SKProduct
 
-        init(_ skProduct: SKProduct) {
+        public init(_ skProduct: SKProduct) {
             self.skProduct = skProduct
         }
     }

@@ -5,8 +5,8 @@ import PackageDescription
 let package = Package(
     name: "InAppPurchase",
     platforms: [
-        .iOS(.v15),
-        .macOS(.v13)
+      .iOS(.v11),
+      .macOS(.v10_15)
     ],
     products: [
         .library(name: "InAppPurchase", targets: ["InAppPurchase"]),
